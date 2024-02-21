@@ -7,15 +7,26 @@ gsap.registerPlugin(CSSPlugin);
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
+  const [loadTime, setLoadTime] = useState(null);
 
   useEffect(() => {
+
+    // this function calculate the load time of website
+    const start = performance.now();
+    setTimeout(() => {
+      const end = performance.now();
+      const time = end - start;
+      setLoadTime(time);
+    }, 1000);
+    // ////////////////////////////////////////////////
+
     const count = setInterval(() => {
       setCounter(
         (counter) => (
           counter < 100 ? counter + 1 : (clearInterval(count), setCounter(100), reveal())
         )
       )
-    }, 25)
+    }, loadTime)
   }, [])
 
   const reveal = () => {
