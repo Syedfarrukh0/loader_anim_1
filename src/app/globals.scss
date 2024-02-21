@@ -146,3 +146,12 @@
     display: none;
   }
 }
+
+.app_container::-webkit-scrollbar{
+  background: #ffffff67; 
+  width: 0.3rem;
+}
+
+.app_container::-webkit-scrollbar-thumb{
+  background: #f48049; 
+}

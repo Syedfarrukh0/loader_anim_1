@@ -25,9 +25,7 @@ export default function Home() {
           counter < 100 ? counter + 1 : (clearInterval(count), setCounter(100), reveal())
         )
       )
-      
       document.querySelector('.app_container').style.overflow = 'hidden';
-    
     }, loadTime)
   }, [])
 
@@ -93,9 +91,7 @@ export default function Home() {
         <p className="title-line"> -Nelson Mandela </p>
       </div>
 
-      <div className="border-2 border-red-900 w-screen h-screen z-50 relative">
-
-      </div>
+      <div className="supportive-div border--2 border-red--900 w-screen h-screen z-50 relative"></div>
 
       <div className="bg-slate-700 border-2 border-red-900 w-screen h-screen z-50 relative">
 
