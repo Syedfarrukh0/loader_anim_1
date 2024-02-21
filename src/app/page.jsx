@@ -2,7 +2,6 @@
 // import Counter from "./features/counter/Counter";
 import { gsap, CSSPlugin, Expo } from "gsap";
 import { useEffect, useState } from "react";
-
 gsap.registerPlugin(CSSPlugin);
 
 export default function Home() {
@@ -26,6 +25,9 @@ export default function Home() {
           counter < 100 ? counter + 1 : (clearInterval(count), setCounter(100), reveal())
         )
       )
+      
+      document.querySelector('.app_container').style.overflow = 'hidden';
+    
     }, loadTime)
   }, [])
 
@@ -33,6 +35,7 @@ export default function Home() {
     const t1 = gsap.timeline({
       onComplete: () => {
         console.log("completed")
+        document.querySelector('.app_container').style.overflowY = 'scroll';
       }
     })
 
@@ -88,6 +91,14 @@ export default function Home() {
         <p className="title-line"> not in never falling, </p>
         <p className="title-line"> but in rising every time we fall. </p>
         <p className="title-line"> -Nelson Mandela </p>
+      </div>
+
+      <div className="border-2 border-red-900 w-screen h-screen z-50 relative">
+
+      </div>
+
+      <div className="bg-slate-700 border-2 border-red-900 w-screen h-screen z-50 relative">
+
       </div>
 
     </div>
